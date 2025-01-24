@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %} Services{% endblock %}
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center">Available Services</h1>
+    {% if services|length <= 0 %}
+        <p class="text-center text-muted">No services available at the moment.</p>
+    {% else %}
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for service in services %}
+            <tr>
+                <td>{{ service.name }}</td>
+                <td>{{ service.price }}</td>
+                <td>{{ service.desc }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</div>
+<div style="text-align: center;">
+    <a href="/addservices" class="btn btn-info" type="button">Add New Services</a>
+  </div>
+{% endblock %}

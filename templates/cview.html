@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %} Customer Dashboard {% endblock %}
+{% block content %}
+<h2>Welcome, {{ username }}!</h2>
+
+<h3>Available Service Partners</h3>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Date of Join</th>
+            <th>Service Offered</th>
+            <th>Price</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for partner in partners %}
+        <tr>
+            <td>{{ partner.name }}</td>
+            <td>{{ partner.date_of_join.strftime('%Y-%m-%d') }}</td>
+            <td>{{ partner.sname }}</td>
+            <td>{{ partner.cat.price }}</td>
+            <td>{{ partner.desc }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h3>Submit a Service Request</h3>
+<form method="post" action="/cview">
+    <div class="form-group">
+        <label for="partner">Choose a Service Partner:</label>
+        <select id="partner" name="partner" class="form-control">
+            {% for partner in partners %}
+            <option value="{{ partner.name }}">{{ partner.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit Request</button>
+</form>
+
+{% if messages %}
+<div class="alert alert-info mt-3">
+    {{ messages }}
+</div>
+{% endif %}
+{% endblock %}

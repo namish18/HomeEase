@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %} Admin Login {% endblock %}
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<div style="text-align: center;">
+    <h3>ADMIN LOG IN</h3>
+
+<br>
+<br>
+<div style="margin-left: 40px; margin-right: 40px;">
+<form class="form-signin" action="/alogin" method="post"> 
+    <div class="mb-3 text-center">
+        <label for="aname" class="form-label">Admin UserID</label>
+        <input type="text" class="form-control" id="aname" name="aname">
+    </div>
+    <div class="text-center">
+        <label for="apass" class="form-label">Password</label>
+        <input type="password" id="apass" name="apass" class="form-control" aria-describedby="passwordHelpBlock">
+        <div id="passwordHelpBlock" class="form-text">
+            Enter the password to access your account
+        </div>
+    </div>
+    <br>
+    <input class="btn btn-outline-info" type="submit" value="Log in">
+</form>
+</div>
+<br>
+<br>
+</div>
+{% endblock %}

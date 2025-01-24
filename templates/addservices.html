@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Add Services{% endblock %}
+{% block content %}
+<div style="text-align: center;">
+    <h3>ADD NEW SERVICE</h3>
+
+<br>
+<br>
+<div style="margin-left: 40px; margin-right: 40px;">
+    <form class="form-signin" action="/addservices" method="post">
+<div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="name" name="name" >
+  </div>
+
+  <div class="mb-3">
+    <label for="sdesc" class="form-label">Description</label>
+    <textarea class="form-control" id="sdesc" name="sdesc" rows="3"></textarea>
+  </div>
+<div class="mb-3 text-center">
+    <label for="price" class="form-label">Price</label>
+    <input type="text" class="form-control" id="price" name="price">
+</div>
+
+</div>
+<br>
+<input class="btn btn-info" type="submit" value="Register">
+</form>
+</div>
+{% endblock %}

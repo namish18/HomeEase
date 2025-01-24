@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %} Service Partners {% endblock %}
+{% block content %}
+<h1>Service Partners</h1>
+<a href="/pcheck" class="btn btn-outline-secondary">All Partners</a>
+<a href="/pcheck/verified" class="btn btn-outline-secondary">Verified partners</a>
+<a href="/pcheck/unverified" class="btn btn-outline-secondary">Unverified Partners</a>
+
+{% if all_partners|length<=0 %}
+    <p>No Service Partner Registered!</p>
+{% else %}
+<ul>
+    {% for partner in all_partners %}
+    
+        <li>
+            Name: {{partner.name }}<br>
+            Service: {{ partner.sname }}<br>
+            Joining Date: {{ partner.date_of_join }}<br>
+            Description: {{ partner.desc }}<br>
+            Approved: {{ partner.approved }}<br>
+            {% if not partner.approved %}
+        <!-- Approve button, displayed only if not approved -->
+        <form action="/approve_partner" method="post" style="display:inline;">
+            <input type="hidden" name="partner_id" value="{{ partner.name }}">
+            <button type="submit" class="btn btn-success btn-sm">Approve</button>
+        </form>
+        {% else %}
+        <span class="text-success">Already Approved</span>
+        {% endif %}
+        </li>
+    
+    <hr>
+    {% endfor %}
+</ul>
+
+{% endif %}
+{% endblock %}

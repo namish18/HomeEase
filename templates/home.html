@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+{% block content %}
+<div style="text-align: center; background-color: #f8f9fa; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+  <h1 style="font-family: 'Arial', sans-serif; color: #007bff; margin-bottom: 20px;">HomeEase</h1>
+  <p style="font-family: 'Georgia', serif; font-size: 18px; color: #333; line-height: 1.6;">
+      Simplify your home life with our all-in-one household service platform. <br>
+      From cleaning and maintenance to pet care and errands, we've got you covered. <br>
+      Our network of trusted, vetted professionals are just a click away, ready to tackle your to-do list and restore order to your domain. <br>
+      Say goodbye to the hassle of juggling multiple providers - our seamless booking and management system makes managing your home a breeze. <br>
+      Experience the freedom of a tidy, well-maintained abode, without lifting a finger. Welcome to the future of effortless living, <br>
+      where your home is your sanctuary, <br>
+      and we're the guardians of your domestic bliss.
+  </p>
+  <div class="btn-group btn-group-lg" role="group" aria-label="Large button group" style="margin-top: 20px;">
+      <a href="/login" class="btn btn-info" style="width: 150px; margin: 5px;">Customer</a>
+      <a href="/plogin" class="btn btn-info" style="width: 150px; margin: 5px;">Service Partner</a>
+      <a href="/alogin" class="btn btn-info" style="width: 150px; margin: 5px;">Admin</a>
+  </div>
+</div>
+
+{% endblock %}
